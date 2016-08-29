@@ -4,8 +4,8 @@ using System.Configuration;
 public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceWriter log)
 {
     log.Info($"C# HTTP trigger function processed a request. RequestUri={req.RequestUri}");
-    log.Info($"MY_TEST_1:{Environment.GetEnvironmentVariable("MY_TEST_1")}");
-    log.Info($"MY_TEST_1:{ConfigurationManager.AppSettings["MY_TEST_1"]}");
+    // log.Info($"MY_TEST_1:{Environment.GetEnvironmentVariable("MY_TEST_1")}"); //This is stupid
+    log.Info($"MY_TEST_1:{ConfigurationManager.AppSettings["MY_TEST_1"]}"); // Use old and true ConfigurationManager
     
 
     // parse query parameter
