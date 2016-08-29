@@ -3,6 +3,7 @@ using System.Net;
 public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceWriter log)
 {
     log.Info($"C# HTTP trigger function processed a request. RequestUri={req.RequestUri}");
+    log.Info($"MY_TEST_1:{Environment.GetEnvironmentVariable("MY_TEST_1")}");
 
     // parse query parameter
     string name = req.GetQueryNameValuePairs()
